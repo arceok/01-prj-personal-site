@@ -1,1 +1,208 @@
 /* Add you CSS here */
+
+/* Set background color for the whole page */
+body {
+  background-color: #F3F2ED; /* light cream */
+  color: #5A4B42; /* dark brown */
+  font-family: 'Merriweather', serif; /* changed to Merriweather */
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation bar styles */
+nav {
+  background-color: #CFE7A4; /* soft green */
+  padding: 20px 0;           /* more space above and below links */
+  box-shadow: 0 2px 4px #789262; /* muted green shadow */
+}
+
+nav ul {
+  list-style: none; /* remove bullet points */
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline; /* display links in a row */
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #789262; /* muted green */
+  font-weight: bold;
+  font-size: 1.3em;          /* make the text larger */
+  padding: 12px 20px;        /* more space around each link */
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+nav ul li a:hover {
+  background-color: #A3C86D; /* kiwi green */
+  color: #F3F2ED; /* light cream text on hover */
+}
+
+/* Center each section and add spacing */
+.center-section {
+  /* Add card background and thicker brown outline */
+  background-color: #FFFFFF;      /* white card background */
+  margin: 40px auto 40px auto;    /* space above and below each section */
+  padding: 40px 24px;             /* space around content */
+  max-width: 900px;
+  border-radius: 12px;            /* rounded corners */
+  box-shadow: 0 2px 8px #CFE7A4;  /* soft green shadow */
+  border: 4px solid #5A4B42;      /* thicker brown outline */
+  text-align: center;
+}
+
+/* Remove background and color overrides from section IDs */
+#bio,
+#quote,
+#skills,
+#books,
+#gallery {
+  background-color: #FFFFFF; /* white background for each card */
+  color: inherit;
+}
+
+/* Profile section background that extends across the page */
+.profile-bg {
+  /* Kiwi background image stretches across the whole page */
+  background-color: #FFFFFF; /* plain white background */
+  background-image: url('img/Kiwi Background.png'); /* add kiwi image */
+  background-repeat: no-repeat; /* do not repeat the image */
+  background-position: center;  /* center the image */
+  background-size: cover;       /* stretch image to cover the whole section */
+  width: 100vw;                 /* full viewport width */
+  min-width: 100vw;             /* ensure no shrinking */
+  margin: 0;                    /* no margin */
+  padding: 260px 0;             /* much more vertical space for the image */
+  text-align: center;
+  box-sizing: border-box;       /* include padding in width */
+}
+
+/* Profile picture styling */
+#profile-pic img {
+  width: 120px;                /* smaller width for the photo */
+  height: 120px;               /* smaller height for the photo */
+  border-radius: 50%;          /* make image round */
+  border: 4px solid #A3C86D;   /* kiwi green border */
+  background: #CFE7A4;         /* soft green background */
+  object-fit: cover;
+  margin-top: 24px;            /* space above the photo */
+  margin-bottom: 24px;         /* space below the photo */
+  box-shadow: 0 4px 16px #CFE7A4; /* soft shadow for emphasis */
+}
+
+/* Remove white card background from profile pic section */
+#profile-pic {
+  background: none;
+  box-shadow: none;
+  max-width: none;
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Style for the name under the profile picture */
+#my-name {
+  font-size: 2em;           /* make the name big */
+  color: #5A4B42;           /* dark brown color */
+  margin-top: 12px;         /* space above the name */
+  margin-bottom: 0;         /* no extra space below */
+  font-family: 'Merriweather', serif; /* match the rest of the site */
+}
+
+/* Gallery row styling */
+.gallery-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px; /* space between images */
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.gallery-row img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #CFE7A4; /* soft green border */
+  background: #F3F2ED; /* light cream background */
+}
+
+/* Blockquote styling for quote section */
+blockquote {
+  font-style: italic;
+  color: #789262; /* muted green */
+  background: #CFE7A4; /* soft green */
+  border-left: 4px solid #A3C86D; /* kiwi green */
+  margin: 16px auto;
+  padding: 24px 28px;         /* more space inside the quote card */
+  border-radius: 6px;
+  max-width: 600px;           /* make the quote card wider */
+  font-size: 1.3em;           /* make the quote text bigger */
+}
+
+/* Simple heading color */
+h2 {
+  color: #A3C86D;      /* kiwi green */
+  font-size: 2.2em;    /* bigger heading */
+  margin-bottom: 18px; /* more space below heading */
+}
+
+/* Make subsection text (like p and li) bigger */
+.center-section p,
+.center-section ul,
+.center-section li {
+  font-size: 1.25em;   /* bigger font for subsections */
+}
+
+/* List styling for minimal look */
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+ul li {
+  padding: 4px 0;
+}
+
+/* Contact bar fixed at the bottom of the screen */
+#contact-bar {
+  position: fixed;           /* stay at the bottom */
+  left: 0;
+  bottom: 0;
+  width: 100%;               /* full width */
+  background-color: #CFE7A4; /* soft green background */
+  color: #5A4B42;            /* dark brown text */
+  text-align: center;        /* center the text */
+  padding: 14px 0;           /* space above and below text */
+  font-size: 1.1em;          /* slightly bigger text */
+  box-shadow: 0 -2px 8px #CFE7A4; /* soft shadow on top */
+  z-index: 100;              /* make sure it stays on top */
+}
+
+/* Style the contact links in the bar */
+#contact-bar a {
+  color: #789262;            /* muted green for links */
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#contact-bar a:hover {
+  color: #A3C86D;            /* kiwi green on hover */
+}
+
+/* Responsive: make sure it looks good on small screens */
+@media (max-width: 600px) {
+  .center-section {
+    max-width: 98%;
+    padding: 16px 4px;
+  }
+  .gallery-row img {
+    width: 80px;
+    height: 80px;
+  }
+}
