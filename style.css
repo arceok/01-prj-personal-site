@@ -77,21 +77,21 @@ nav ul li a:hover {
   width: 100vw;                 /* full viewport width */
   min-width: 100vw;             /* ensure no shrinking */
   margin: 0;                    /* no margin */
-  padding: 260px 0;             /* much more vertical space for the image */
+  padding: 100px 0;             /* much more vertical space for the image */
   text-align: center;
   box-sizing: border-box;       /* include padding in width */
 }
 
 /* Profile picture styling */
 #profile-pic img {
-  width: 120px;                /* smaller width for the photo */
-  height: 120px;               /* smaller height for the photo */
+  width: 500px;                /* smaller width for the photo */
+  height: 500px;               /* smaller height for the photo */
   border-radius: 50%;          /* make image round */
-  border: 4px solid #A3C86D;   /* kiwi green border */
+  border: 4px solid #5A4B42;   /* kiwi green border */
   background: #CFE7A4;         /* soft green background */
   object-fit: cover;
-  margin-top: 24px;            /* space above the photo */
-  margin-bottom: 24px;         /* space below the photo */
+  margin-top: 10px;            /* space above the photo */
+  margin-bottom: 10px;         /* space below the photo */
   box-shadow: 0 4px 16px #CFE7A4; /* soft shadow for emphasis */
 }
 
@@ -107,9 +107,9 @@ nav ul li a:hover {
 
 /* Style for the name under the profile picture */
 #my-name {
-  font-size: 2em;           /* make the name big */
+  font-size: 5em;           /* make the name big */
   color: #5A4B42;           /* dark brown color */
-  margin-top: 12px;         /* space above the name */
+  margin-top: 10px;         /* space above the name */
   margin-bottom: 0;         /* no extra space below */
   font-family: 'Merriweather', serif; /* match the rest of the site */
 }
@@ -123,13 +123,14 @@ nav ul li a:hover {
   margin-top: 10px;
 }
 
+/* Make gallery photos much bigger */
 .gallery-row img {
-  width: 100px;
-  height: 100px;
+  width: 260px;                /* large gallery images */
+  height: 260px;               /* large gallery images */
   object-fit: cover;
   border-radius: 8px;
-  border: 2px solid #CFE7A4; /* soft green border */
-  background: #F3F2ED; /* light cream background */
+  border: 2px solid #CFE7A4;   /* soft green border */
+  background: #F3F2ED;         /* light cream background */
 }
 
 /* Blockquote styling for quote section */
@@ -195,6 +196,22 @@ ul li {
   color: #A3C86D;            /* kiwi green on hover */
 }
 
+/* Skills icons row styling */
+.skills-row {
+  display: flex;              /* put icons in a row */
+  justify-content: center;    /* center the icons */
+  gap: 32px;                  /* space between icons */
+  margin-top: 24px;
+}
+
+.skills-row svg {
+  width: 100px;
+  height: 100px;
+  fill: #531607;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 /* Responsive: make sure it looks good on small screens */
 @media (max-width: 600px) {
   .center-section {
@@ -202,7 +219,11 @@ ul li {
     padding: 16px 4px;
   }
   .gallery-row img {
-    width: 80px;
-    height: 80px;
+    width: 140px;
+    height: 140px;
+  }
+  #profile-pic img {
+    width: 200px;
+    height: 200px;
   }
 }

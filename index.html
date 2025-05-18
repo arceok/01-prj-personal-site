@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <title>My Personal Site</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Add this line to ensure SVG icons display correctly -->
+  <style>
+    .skills-row svg {
+      width: 48px;
+      height: 48px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  </style>
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -12,7 +21,7 @@
     <ul>
       <li><a href="#profile-pic">Profile</a></li>
       <li><a href="#bio">Bio</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <!-- Removed Contact from navigation -->
       <li><a href="#quote">Quote</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#books">Books</a></li>
@@ -24,7 +33,7 @@
   <div class="profile-bg">
     <section id="profile-pic">
       <!-- Replace 'profile.jpg' with your own image file -->
-      <img src="profile.jpg" alt="My Profile Picture">
+      <img src="img/Profile Pic 5-18-25.jpg" alt="My Profile Picture">
       <!-- Name section under profile picture -->
       <h1 id="my-name">Kaeli Arceo</h1>
     </section>
@@ -51,12 +60,20 @@
   <!-- Skills Section -->
   <section id="skills" class="center-section">
     <h2>My Skills</h2>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript (learning!)</li>
-      <!-- Add more skills as you learn -->
-    </ul>
+    <!-- Put the SVG icons in a horizontal row using a flex container -->
+    <div class="skills-row">
+      <!-- Use a correct SVG viewBox for each icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" width="100" height="100" fill="#531607">
+        <path d="M0 600V360h48v89h108v-89h48v240h-48V497H48v103H0Zm316 0V408h-70v-48h188v48h-70v192h-48Zm160 0V394q0-15 9.5-24.5T510 360h200q15 0 24.5 9.5T744 394v206h-48V408h-62v150h-48V408h-62v192h-48Zm326 0V360h48v192h110v48H802Z"/>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" width="100" height="100" fill="#531607">
+        <path d="M414 600q-15 0-24.5-9.5T380 566v-46h48v32h104v-53H414q-14 0-24-10t-10-24v-71q0-15 9.5-24.5T414 360h132q15 0 24.5 9.5T580 394v46h-48v-32H428v53h118q14 0 24 10t10 24v71q0 15-9.5 24.5T546 600H414Zm260 0q-15 0-24.5-9.5T640 566v-46h48v32h104v-53H674q-14 0-24-10t-10-24v-71q0-15 9.5-24.5T674 360h132q15 0 24.5 9.5T840 394v46h-48v-32H688v53h118q14 0 24 10t10 24v71q0 15-9.5 24.5T806 600H674Zm-520 0q-15 0-24.5-9.5T120 566V394q0-15 9.5-24.5T154 360h132q15 0 24.5 9.5T320 394v46h-48v-32H168v144h104v-32h48v46q0 15-9.5 24.5T286 600H154Z"/>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" width="100" height="100" fill="#531607">
+        <path d="M274 600q-15 0-24.5-9.5T240 566v-66h48v52h84V360h48v206q0 15-9.5 24.5T386 600H274Zm240 0q-15 0-24.5-9.5T480 566v-46h48v32h104v-53H514q-14 0-24-10t-10-24v-71q0-15 9.5-24.5T514 360h132q15 0 24.5 9.5T680 394v46h-48v-32H528v53h118q14 0 24 10t10 24v71q0 15-9.5 24.5T646 600H514Z"/>
+      </svg>
+    </div>
+    <!-- Add more skills as you learn -->
   </section>
 
   <!-- Favorite Books Section -->
@@ -74,10 +91,13 @@
   <section id="gallery" class="center-section">
     <h2>A Glimpse of My Life</h2>
     <div class="gallery-row">
-      <!-- Replace 'photo1.jpg', etc. with your own images -->
-      <img src="photo1.jpg" alt="Gallery Photo 1">
-      <img src="photo2.jpg" alt="Gallery Photo 2">
-      <img src="photo3.jpg" alt="Gallery Photo 3">
+      <!-- Show 6 photos in the gallery -->
+      <img src="img/Grad Ceremony.JPG" alt="Gallery Photo 1">
+      <img src="img/Grad Photo Aimee.jpg" alt="Gallery Photo 2">
+      <img src="img/Grad Photo Kirk.jpg" alt="Gallery Photo 3">
+      <img src="img/Grad Photo Lexi.jpg" alt="Gallery Photo 4">
+      <img src="img/Grad Photo Pablo.jpg" alt="Gallery Photo 5">
+      <img src="img/Grad Photo Sav.jpg" alt="Gallery Photo 6">
     </div>
   </section>
 
