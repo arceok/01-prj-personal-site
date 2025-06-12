@@ -2,18 +2,18 @@
 
 /* Set background color for the whole page */
 body {
-  background-color: #F3F2ED; /* light cream */
-  color: #5A4B42; /* dark brown */
-  font-family: 'Merriweather', serif; /* changed to Merriweather */
+  background-color: #F7F6F2; /* lighter cream for better contrast */
+  color: #3B2F28;            /* darker brown for better readability */
+  font-family: 'Merriweather', serif;
   margin: 0;
   padding: 0;
 }
 
 /* Navigation bar styles */
 nav {
-  background-color: #CFE7A4; /* soft green */
-  padding: 20px 0;           /* more space above and below links */
-  box-shadow: 0 2px 4px #789262; /* muted green shadow */
+  background-color: #B9D98A; /* slightly darker green for better contrast */
+  padding: 20px 0;
+  box-shadow: 0 2px 4px #789262;
 }
 
 nav ul {
@@ -30,30 +30,32 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #789262; /* muted green */
+  color: #3B2F28; /* darker brown for better contrast */
   font-weight: bold;
-  font-size: 1.3em;          /* make the text larger */
-  padding: 12px 20px;        /* more space around each link */
+  font-size: 1.3em;
+  padding: 12px 20px;
   border-radius: 4px;
   transition: background 0.2s;
 }
 
 nav ul li a:hover {
-  background-color: #A3C86D; /* kiwi green */
-  color: #F3F2ED; /* light cream text on hover */
+  background-color: #A3C86D;
+  color: #FFFFFF; /* white text on hover for better contrast */
 }
 
 /* Center each section and add spacing */
 .center-section {
-  /* Add card background and thicker brown outline */
-  background-color: #FFFFFF;      /* white card background */
-  margin: 40px auto 40px auto;    /* space above and below each section */
-  padding: 40px 24px;             /* space around content */
+  background-color: #FFFFFF;
+  margin: 40px auto;
+  padding: 40px 24px;
   max-width: 900px;
-  border-radius: 12px;            /* rounded corners */
-  box-shadow: 0 2px 8px #CFE7A4;  /* soft green shadow */
-  border: 4px solid #5A4B42;      /* thicker brown outline */
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #B9D98A; /* match nav color */
+  border: 4px solid #3B2F28;     /* darker brown outline */
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Remove background and color overrides from section IDs */
@@ -62,37 +64,36 @@ nav ul li a:hover {
 #skills,
 #books,
 #gallery {
-  background-color: #FFFFFF; /* white background for each card */
+  background-color: #FFFFFF;
   color: inherit;
 }
 
 /* Profile section background that extends across the page */
 .profile-bg {
-  /* Kiwi background image stretches across the whole page */
-  background-color: #FFFFFF; /* plain white background */
-  background-image: url('img/Kiwi Background.png'); /* add kiwi image */
-  background-repeat: no-repeat; /* do not repeat the image */
-  background-position: center;  /* center the image */
-  background-size: cover;       /* stretch image to cover the whole section */
-  width: 100vw;                 /* full viewport width */
-  min-width: 100vw;             /* ensure no shrinking */
-  margin: 0;                    /* no margin */
-  padding: 100px 0;             /* much more vertical space for the image */
+  background-color: #FFFFFF;
+  background-image: url('img/Kiwi Background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  min-width: 100vw;
+  margin: 0;
+  padding: 100px 0;
   text-align: center;
-  box-sizing: border-box;       /* include padding in width */
+  box-sizing: border-box;
 }
 
 /* Profile picture styling */
 #profile-pic img {
-  width: 500px;                /* smaller width for the photo */
-  height: 500px;               /* smaller height for the photo */
-  border-radius: 50%;          /* make image round */
-  border: 4px solid #5A4B42;   /* kiwi green border */
-  background: #CFE7A4;         /* soft green background */
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 4px solid #A3C86D;
+  background: #E0E8D9;         /* lighter green for better contrast */
   object-fit: cover;
-  margin-top: 10px;            /* space above the photo */
-  margin-bottom: 10px;         /* space below the photo */
-  box-shadow: 0 4px 16px #CFE7A4; /* soft shadow for emphasis */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 16px #B9D98A;
 }
 
 /* Remove white card background from profile pic section */
@@ -125,105 +126,297 @@ nav ul li a:hover {
 
 /* Make gallery photos much bigger */
 .gallery-row img {
-  width: 260px;                /* large gallery images */
-  height: 260px;               /* large gallery images */
+  width: 260px;
+  height: 260px;
   object-fit: cover;
   border-radius: 8px;
-  border: 2px solid #CFE7A4;   /* soft green border */
-  background: #F3F2ED;         /* light cream background */
+  border: 2px solid #B9D98A;   /* match nav color */
+  background: #F7F6F2;         /* lighter cream */
+}
+
+/* Book flip card container and gallery images: keep a fixed aspect ratio */
+.book-flip,
+.gallery-row img {
+  aspect-ratio: 9 / 13; /* keeps a book-like shape */
+}
+
+/* Book flip card container */
+.book-flip {
+  background: none;
+  width: 180px;
+  height: 260px;
+  perspective: 1000px;
+  flex: 0 0 auto; /* prevent shrinking so cards don't get cut off */
+}
+
+/* Inner part that flips */
+.book-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* Flip on hover */
+.book-flip:hover .book-flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and back of the card */
+.book-flip-front, .book-flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #B9D98A;
+  border: 2px solid #3B2F28;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Front: show the book cover */
+.book-flip-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Back: show book info */
+.book-flip-back {
+  background: #B9D98A; /* match your color scheme */
+  color: #3B2F28;
+  transform: rotateY(180deg);
+  text-align: center;
+  padding: 16px;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Greeting popup card styles */
+#greeting-card {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;           /* cover the whole screen */
+  height: 100vh;
+  background: rgba(90, 75, 66, 0.5); /* semi-transparent brown overlay */
+  justify-content: center;
+  align-items: center;
+  z-index: 200;           /* above everything else */
+}
+
+#greeting-content {
+  background: #FFFFFF;           /* white card */
+  border: 4px solid #5A4B42;     /* thick brown border */
+  border-radius: 12px;
+  box-shadow: 0 4px 16px #CFE7A4; /* soft green shadow */
+  padding: 32px 40px;
+  text-align: center;
+  color: #5A4B42;               /* dark brown text */
+  font-size: 1.3em;
+  max-width: 90vw;              /* prevent overflow on small screens */
+  max-height: 80vh;
+  overflow: auto;
+}
+
+#greeting-content button {
+  margin-top: 18px;
+  padding: 10px 28px;
+  background: #CFE7A4;          /* soft green */
+  color: #5A4B42;               /* dark brown */
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  font-family: 'Merriweather', serif;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#greeting-content button:hover {
+  background: #A3C86D;          /* kiwi green on hover */
+}
+
+/* Contact bar fixed at the bottom of the screen */
+#contact-bar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #B9D98A;
+  color: #3B2F28;
+  text-align: center;
+  padding: 14px 0;
+  font-size: 1.1em;
+  box-shadow: 0 -2px 8px #B9D98A;
+  z-index: 100;
+  display: flex;                /* use flex for better layout */
+  flex-wrap: wrap;              /* allow wrapping on small screens */
+  justify-content: center;      /* center content horizontally */
+  align-items: center;          /* center content vertically */
+  gap: 8px;                     /* space between items */
+  min-height: 48px;             /* ensure enough height for content */
+  box-sizing: border-box;
+  word-break: break-word;       /* prevent overflow on small screens */
+}
+
+#contact-bar span,
+#contact-bar a {
+  display: inline-block;
+  margin: 0 4px;
+  word-break: break-word;
+  max-width: 95vw;              /* prevent overflow */
 }
 
 /* Blockquote styling for quote section */
 blockquote {
   font-style: italic;
-  color: #789262; /* muted green */
-  background: #CFE7A4; /* soft green */
-  border-left: 4px solid #A3C86D; /* kiwi green */
-  margin: 16px auto;
-  padding: 24px 28px;         /* more space inside the quote card */
-  border-radius: 6px;
-  max-width: 600px;           /* make the quote card wider */
-  font-size: 1.3em;           /* make the quote text bigger */
+  color: #5A4B42;                  /* dark brown text for contrast, matches theme */
+  background: #F3E9DC !important;  /* soft, creamy brown (theme-friendly) */
+  border-left: 4px solid #A3C86D;  /* kiwi green border for a pop of theme color */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 24px 28px;
+  border-radius: 10px;             /* slightly more rounded for a friendly look */
+  max-width: 600px;
+  font-size: 1.3em;
+  display: block;
+  text-align: center;
+  box-shadow: 0 2px 8px #B9D98A;  /* soft green shadow for depth */
 }
 
-/* Simple heading color */
-h2 {
-  color: #A3C86D;      /* kiwi green */
-  font-size: 2.2em;    /* bigger heading */
-  margin-bottom: 18px; /* more space below heading */
+/* Hamburger menu button - hidden by default */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: #3B2F28; /* matches your theme */
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  cursor: pointer;
+  z-index: 101;
 }
 
-/* Make subsection text (like p and li) bigger */
-.center-section p,
-.center-section ul,
-.center-section li {
-  font-size: 1.25em;   /* bigger font for subsections */
+/* Responsive navigation styles */
+@media (max-width: 700px) {
+  nav {
+    padding: 12px 0;
+    position: relative;
+  }
+  .nav-toggle {
+    display: block; /* show hamburger on small screens */
+  }
+  nav ul {
+    display: none;           /* hide menu by default */
+    flex-direction: column;
+    background: #B9D98A;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 8px #789262;
+    padding: 0;
+    margin: 0;
+    z-index: 100;
+  }
+  nav ul.open {
+    display: flex;           /* show menu when open */
+  }
+  nav ul li {
+    display: block;
+    margin: 12px 0;
+  }
 }
 
-/* List styling for minimal look */
-ul {
-  padding-left: 0;
-  list-style: none;
-}
-
-ul li {
-  padding: 4px 0;
-}
-
-/* Contact bar fixed at the bottom of the screen */
-#contact-bar {
-  position: fixed;           /* stay at the bottom */
-  left: 0;
-  bottom: 0;
-  width: 100%;               /* full width */
-  background-color: #CFE7A4; /* soft green background */
-  color: #5A4B42;            /* dark brown text */
-  text-align: center;        /* center the text */
-  padding: 14px 0;           /* space above and below text */
-  font-size: 1.1em;          /* slightly bigger text */
-  box-shadow: 0 -2px 8px #CFE7A4; /* soft shadow on top */
-  z-index: 100;              /* make sure it stays on top */
-}
-
-/* Style the contact links in the bar */
-#contact-bar a {
-  color: #789262;            /* muted green for links */
-  text-decoration: underline;
-  font-weight: bold;
-}
-
-#contact-bar a:hover {
-  color: #A3C86D;            /* kiwi green on hover */
-}
-
-/* Skills icons row styling */
-.skills-row {
-  display: flex;              /* put icons in a row */
-  justify-content: center;    /* center the icons */
-  gap: 32px;                  /* space between icons */
-  margin-top: 24px;
-}
-
-.skills-row svg {
-  width: 100px;
-  height: 100px;
-  fill: #531607;
-  display: inline-block;
-  vertical-align: middle;
+/* Responsive: adjust footer font and layout for small screens */
+@media (max-width: 600px) {
+  #contact-bar {
+    font-size: 0.95em;
+    padding: 10px 2px;
+    flex-direction: column;     /* stack items vertically */
+    gap: 4px;
+  }
+  #contact-bar span,
+  #contact-bar a {
+    display: block;
+    margin: 2px 0;
+    max-width: 98vw;
+    overflow-wrap: break-word;
+    text-align: center;
+  }
 }
 
 /* Responsive: make sure it looks good on small screens */
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .center-section {
     max-width: 98%;
-    padding: 16px 4px;
-  }
-  .gallery-row img {
-    width: 140px;
-    height: 140px;
+    padding: 24px 6px;
+    font-size: 1em;
   }
   #profile-pic img {
-    width: 200px;
-    height: 200px;
+    width: 320px;
+    height: 320px;
+  }
+  .book-flip,
+  .gallery-row img {
+    width: 40vw;
+    max-width: 220px;
+    min-width: 140px;
+    /* height will follow aspect-ratio */
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 1em;
+  }
+  .center-section {
+    max-width: 100%;
+    padding: 10px 2px;
+    font-size: 0.95em;
+  }
+  h2 {
+    font-size: 1.3em;
+  }
+  #profile-pic img {
+    width: 60vw;              /* scale with screen, but not too small */
+    height: 60vw;
+    max-width: 220px;
+    max-height: 220px;
+    min-width: 120px;
+    min-height: 120px;
+  }
+  .gallery-row {
+    gap: 8px;
+  }
+  .gallery-row img,
+  .book-flip {
+    width: 40vw;
+    max-width: 160px;
+    min-width: 100px;
+    /* height will follow aspect-ratio */
+    flex: 0 0 auto;
+  }
+  #profile-pic img {
+    aspect-ratio: 1 / 1; /* keep profile pic square */
+  }
+  .book-flip-inner {
+    font-size: 0.95em;
+  }
+  blockquote {
+    font-size: 1em;
+    padding: 12px 8px;
   }
 }
